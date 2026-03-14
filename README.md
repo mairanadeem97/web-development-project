@@ -11,7 +11,7 @@ My goal is to design a complete e-business layout that can later be expanded and
 
 ## Entity Relationship Diagram (ERD)
 
-![ERD](images/erd.png)
+![ERD](images/ERD.png)
 
 ## Business Rules
 ![alt text](images/BusinessRule.png)
