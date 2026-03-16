@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Web Development Project
 
 ## Project Description
@@ -16,7 +16,7 @@ My goal is to design a complete e-business layout that can later be expanded and
 
 ## Business Rules
 ![alt text](images/BusinessRule.png)
-=======
+
 # Database Project
 
 ## Project Description
@@ -31,4 +31,7 @@ My goal is to design a complete e-business layout that can later be expanded and
 ![alt text](images/ERD.png)
 ## Business Rules
 ![alt text](images/BusinessRule.png)
+## Relations
+![alt text](images/RRELATIONS.png)
+
 >>>>>>> 69365d8 (Added database tables and relations diagram into readme file)
