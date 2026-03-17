@@ -32,12 +32,13 @@ My goal is to design a complete e-business layout that can later be expanded and
 ## Business Rules
 ![alt text](images/BusinessRule.png)
 ## Relations
-![alt text](images/RELATIONS.png)
 This project features an online shopping database.
-The USER table stores addresses in separate fields for precise location-based queries.
+The USER table stores addresses in separate fields.
 PRODUCTs are linked to CATEGORY for easy catalog organization.
 CART and ORDER_ITEM tables manage the many-to-many relationships between users, orders, and products.
 ORDER_ITEM records the product price at purchase time, ensuring historical orders remain accurate even if product prices change later.
 The database follows Third Normal Form (3NF) principles to eliminate redundancy and maintain data integrity.
 
->>>>>>> 69365d8 (Added database tables and relations diagram into readme file)
+![alt text](images/RELATIONS.png)
+
+
