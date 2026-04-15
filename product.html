@@ -34,9 +34,10 @@
 <img src="./images/multimen.jpg" alt="multivitamin for men image" width="300px">
 <figcaption>Multivitamin for Men</figcaption>
 <br>
-<form action="/action_page.php">
+<form  class="cart-form">
+<input type="hidden" name="productName" value="multivit">
   <label for="quantity">Quantity:</label>
-  <input type="number" id="quantity" name="quantity">
+  <input type="number" id="quantity" name="quantity" min="1" value="1">
   <input type="submit" value="Add to Cart">
 </form>
 
@@ -47,10 +48,11 @@
 <img src="./images/eyehealth.jpg" alt="eye health supplement image" width="300px" height="225">
 <figcaption>Eye Health Supplement</figcaption>
 <br>
-<form action="/action_page.php">
+<form class="cart-form">
+<input type="hidden" name="productName" value="eye">
   <label for="quantity">Quantity:</label>
 
-  <input type="number" id="quantity" name="quantity">
+  <input type="number" id="quantity" name="quantity" name="quantity" min="1" value="1">
   <input type="submit" value="Add to Cart">
 </form>
 
@@ -61,9 +63,10 @@
 <img src="./images/vd3.jpg" alt="Vitamin D3 Supplements" width="300px" height="225">
 <figcaption>Vitamin D3 Supplements</figcaption>
 <br>
-<form action="/action_page.php">
+<form  class="cart-form">
+<input type="hidden" name="productName" value="vit d3">
   <label for="quantity">Quantity:</label>
-  <input type="number" id="quantity" name="quantity">
+  <input type="number" id="quantity" name="quantity" name="quantity" min="1" value="1">
 
   <input type="submit" value="Add to Cart">
 </form>
@@ -76,15 +79,17 @@
 <img src="./images/carnitine.jpg" alt="lcarnitine"image width="300px" height="225">
 <figcaption>L carnitine</figcaption>
 <br>
-<form action="/action_page.php">
+<form  class="cart-form">
+<input type="hidden" name="productName" value="L carnitine">
   <label for="quantity">Quantity:</label>
-  <input type="number" id="quantity" name="quantity">
+  <input type="number" id="quantity" name="quantity" name="quantity" min="1" value="1">
   <input type="submit" value="Add to Cart">
 </form>
 <br>
 </div>
   
 </figure>
+<script src="product.js"></script>
 
 </body>
 </html>
