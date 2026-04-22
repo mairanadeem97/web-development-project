@@ -1,0 +1,29 @@
+{
+  "name": "webproject",
+  "version": "1.0.0",
+  "description": "For my project, I am creating an online shopping website for multivitamins. Users will be able to register,  log in, or continue as a guest to browse products. The main page will include navigation bars such as Home, Register/Login, and Continue as Guest.  If the user selects guest access, they will be directed to the product page. On the product page, I have added two product images for now with options to select quantity and add items to the cart.  There will be separate sections for men’s and women’s multivitamins. My goal is to design a complete e-business layout that can later be expanded and possibly used in the future.",
+  "homepage": "https://github.com/mairanadeem97/web-development-project#readme",
+  "bugs": {
+    "url": "https://github.com/mairanadeem97/web-development-project/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mairanadeem97/web-development-project.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+  "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mysql2": "^3.22.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
