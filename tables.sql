@@ -15,3 +15,13 @@ OrderStatus VARCHAR(30) NOT NULL;
 CONSTRAINT userFK FOREIGN KEY(userId) REFERENCES User(userId)  
 );
 
+CREATE TABLE IF NOT EXISTS PRODUCT (
+    ProductId INT AUTO_INCREMENT PRIMARY KEY,
+    ProductName VARCHAR(255) NOT NULL,
+    ProductDescription TEXT,
+    Price DECIMAL(10, 2) NOT NULL,
+    StockQuantity INT NOT NULL,
+    Img VARCHAR(255),
+    CategoryId INT,
+    CONSTRAINT categoryFK FOREIGN KEY (CategoryId) REFERENCES CATEGORY(CategoryId)
+);
