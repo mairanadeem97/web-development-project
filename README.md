@@ -12,10 +12,10 @@ My goal is to design a complete e-business layout that can later be expanded and
 
 ## Entity Relationship Diagram (ERD)
 
-![ERD](images/ERD.png)
+![ERD](public/images/ERD.png)
 
 ## Business Rules
-![alt text](images/BusinessRule.png)
+![alt text](public/images/BusinessRule.png)
 ## Relations
 This project features an online shopping database.
 The USER table stores addresses in separate fields.
@@ -36,9 +36,9 @@ On the product page, I have added two product images for now with options to sel
  There will be separate sections for men’s and women’s multivitamins.
 My goal is to design a complete e-business layout that can later be expanded and possibly used in the future.
 ## Entity Relationship Diagram (ERD)
-![alt text](images/erdupd.png)
+![alt text](public/images/erdupd.png)
 ## Business Rules
-![alt text](images/BusinessRule.png)
+![alt text](public/images/BusinessRule.png)
 ## Relations
 This project features an online shopping database.
 The USER table stores addresses in separate fields.
@@ -47,9 +47,9 @@ CART and ORDER_ITEM tables manage the many-to-many relationships between users, 
 ORDER_ITEM records the product price at purchase time, ensuring historical orders remain accurate even if product prices change later.
 The database follows Third Normal Form (3NF) principles to eliminate redundancy and maintain data integrity.
 
-![alt text](images/RELATIONS.png)
+![alt text](public/images/RELATIONS.png)
 
 
-![alt text](images/RELATIONS.png)
+![alt text](public/images/RELATIONS.png)
 
 
