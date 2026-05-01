@@ -23,19 +23,20 @@
 <main >
 
 
-<form action="product.html" method="get" class="Register-form" id="registration-form">
+<form class="Register-form" id="registerForm">
+<div id="error" style="color: red;"></div>
     <h3>Register an Account</h3>
-    <label for="username">First name: </label>
-    <input type="text" id="username" name="firstName">
+    <label for="firstName">First name: </label>
+    <input type="text" id="firstName" name="firstName">
     <br>
-<label for="username1">Last name: </label>
-    <input type="text" id="username1" name="lastName">
+<label for="lastName">Last name: </label>
+    <input type="text" id="lastName" name="lastName">
     <br>
-<label for="username3">email:    </label>
-    <input type="text" id="username" name="email">
+<label for="email">email:    </label>
+    <input type="email" id="email" name="email">
     <br>
-    <label for="password">Password: </label>
-    <input type="password" id="password" name="password">
+    <label for="passwd">Password: </label>
+    <input type="password" id="passwd" name="password">
     <br>
     <input type="submit" value="Register">
 
@@ -48,6 +49,6 @@
   <p>Already have an account? <a href="login.html">Login</a></p>
 </div>
 </main>
-<script src="user.js"></script>
+<script src="scripts/user.js"></script>
 </body>
 </html>

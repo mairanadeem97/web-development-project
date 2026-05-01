@@ -18,19 +18,21 @@
 </header>
 <body> 
 <main >
-<form action="product.html" method="get" class="Register-form" id="Login-form">
+<form  class="Register-form" id="loginForm">
     <h3>Login Here!</h3>
-    <label for="username">Username: </label>
-    <input type="text" id="username" name="username">
+<div id="error" style="color: red;"></div>
+    <label for="email">Email: </label>
+    <input type="email" id="email" name="email" required>
     <br>
-    <label for="password">Password: </label>
-    <input type="password" id="password" name="password">
+    <label for="passwd">Password: </label>
+    <input type="password" id="passwd" name="password" required>
     <br>
     <input type="submit" value="Login">
     <!-- <input type="color" name="" id="">
     <input type="file" name="" id="">
     <input type="date" name="" id=""> -->
 </form>
+
 <div class="bottom-text">
    <a href="homepage.html">GO BACK</a>
 <br>
@@ -38,6 +40,6 @@
 
 </div>
 </main>
-<script src="user.js"></script>
+<script src="scripts/user.js"></script>
 </body>
 </html>

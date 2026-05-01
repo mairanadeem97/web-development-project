@@ -1,11 +1,11 @@
 const express = require("express")
 const router = express.Router()
-const products = require("../models/product")
+const Category = require("../models/cart")
 
-router.get('/getAllProducts', async (req, res) => {
+router.get('/getAllCartsItem', async (req, res) => {
     try {
-        const products = await product.getAllProducts()
-        res.send(products)
+        const cartItems = await Cart.getAllCartsItem()
+        res.send(cartItems)
     } catch(err) {
         res.status(401).send({message: err.message})
     }

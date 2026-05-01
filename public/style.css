@@ -31,7 +31,7 @@ text-align: center;
   max-width: 600px;
   background-color: rgb(212, 139, 139);
   background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px); /* Modern blur effect */
+  
     padding: 30px;
     max-width: 600px;
     margin: 0 auto;
@@ -117,6 +117,10 @@ text-align: center;
   border: 1px solid #af9696;
   padding: 30px;
   border-radius: 10px;
+display: flex;
+    flex-direction: column; /* Stacks everything (error, h3, labels, inputs) vertically */
+  
+
 }
 input[type="text"],
 input[type="password"] {
@@ -158,4 +162,36 @@ body {
     width: 100%;
     height: 200px;
     object-fit: cover;   /* VERY IMPORTANT */
+}
+footer {
+  background-color: #f8f9fa;
+  padding: 20px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  margin-top: 50px;
+}
+
+.social-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #555;
+  font-weight: bold;
+}
+
+.social-links a:hover {
+  color: #957290; /* Turns blue when you hover over it */
+}
+/* Add input[type="email"] to your existing input styles */
+input[type="text"], 
+input[type="password"], 
+input[type="email"] {
+    width: 100%;       /* Or whatever width you used for the others */
+    padding: 10px;     /* Ensure the inner spacing matches */
+    box-sizing: border-box; /* This prevents padding from making it wider than 100% */
+    margin-bottom: 10px;
+}
+#error {
+    width: 100%;        /* Takes up the whole top row */
+    margin-bottom: 10px; /* Adds space between error and the title */
+    display: block;     /* Ensures it doesn't sit next to other elements */
 }
