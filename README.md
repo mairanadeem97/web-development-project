@@ -23,7 +23,7 @@ CART and ORDER_ITEM tables manage the many-to-many relationships between users, 
 ORDER_ITEM records the product price at purchase time, ensuring historical orders remain accurate even if product prices change later.
 The database follows Third Normal Form (3NF) principles to eliminate redundancy and maintain data integrity.
 
-![alt text](./public/images/RELATION.png)
+![alt text](./public/images/Relation.png)
 
 
 
