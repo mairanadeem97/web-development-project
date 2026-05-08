@@ -13,8 +13,10 @@ async function createCategoryTable() {
 createCategoryTable();
 
 async function getAllCategories() {
-    let sql = `SELECT * FROM CATEGORY;`;
-    return await con.query(sql);
+   let sql = `SELECT * FROM CATEGORY;`;
+    // Using [rows] ensures we return just the data array
+    const [rows] = await con.query(sql);
+    return rows;
 }
 
 module.exports = { getAllCategories }

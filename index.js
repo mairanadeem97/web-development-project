@@ -1,11 +1,13 @@
+const path = require('path');
 require('dotenv').config();
 const express = require("express")
 const app = express()
 
 app.use(express.json())
+app.use(express.static(path.join(__dirname, 'public')));
 
 const userRoutes = require("./server/routes/user")
-const categoryRoutes = require("./server/routes/category")
+
 const productRoutes = require("./server/routes/product")
 const cartRoutes = require("./server/routes/cart")  
 const orderRoutes = require("./server/routes/order") 
@@ -18,7 +20,7 @@ app.use(function(req, res, next) {
 });
 
 app.use("/users", userRoutes)
-app.use("/categories", categoryRoutes)
+
 app.use("/products", productRoutes)
 app.use("/carts", cartRoutes);   
 app.use("/orders", orderRoutes);  

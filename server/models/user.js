@@ -15,6 +15,22 @@ async function createUserTable() {
 }
 
 createUserTable()
+//create a user.      C
+async function register(user) {
+  let cUser = await getUserByEmail(user.email)
+  if(cUser) throw Error("Email already in use!")
+
+  let hashedPassword = await bcrypt.hash(user.password, 10)
+  
+  let sql = `
+    INSERT INTO User(firstName, lastName, password, email)
+    VALUES(?, ?, ?, ?)
+  `
+
+  await con.query(sql, [user.firstName, user.lastName, hashedPassword, user.email])
+  return await login(user)
+}
+
 async function login(user) {
   let cUser = await getUserByEmail(user.email)
   if(!cUser) throw Error("Email not found!")
@@ -24,6 +40,7 @@ async function login(user) {
   
   return cUser
 }
+// read the user         R
 async function getUserByEmail(email) {
   let sql = `
     SELECT * FROM User
@@ -39,19 +56,6 @@ async function getAllUsers() {
     `
   return  await con.query(sql)
 }
-async function register(user) {
-  let cUser = await getUserByEmail(user.email)
-  if(cUser) throw Error("Email already in use!")
 
-  let hashedPassword = await bcrypt.hash(user.password, 10)
-  
-  let sql = `
-    INSERT INTO User(firstName, lastName, password, email)
-    VALUES(?, ?, ?, ?)
-  `
-
-  await con.query(sql, [user.firstName, user.lastName, hashedPassword, user.email])
-  return await login(user)
-}
 
 module.exports = { getAllUsers , login, register}

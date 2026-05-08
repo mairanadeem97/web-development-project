@@ -16,11 +16,32 @@ async function createCartTable() {
 }
 
 createCartTable();
-async function getAllCartsItem() {
-    let sql = `
-      SELECT * FROM CART;
-    `
-    await con.query(sql)
+async function addToCart(userId, productId) {
+    // Check if the item is already in the cart for this user
+    let checkSql = `SELECT * FROM CART WHERE UserId = ? AND ProductId = ?`;
+    const [existing] = await con.query(checkSql, [userId, productId]);
+
+    if (existing.length > 0) {
+        // If it exists, just increment the quantity
+        let updateSql = `UPDATE CART SET Quantity = Quantity + 1 WHERE UserId = ? AND ProductId = ?`;
+        return await con.query(updateSql, [userId, productId]);
+    } else {
+        // If it's new, insert it
+        let insertSql = `INSERT INTO CART (UserId, ProductId, Quantity) VALUES (?, ?, 1)`;
+        return await con.query(insertSql, [userId, productId]);
+    }
 }
 
-module.exports = {getAllCartsItem} // Add functions as needed later
+async function getCartWithDetails(userId) {
+    // This JOIN is what helps the "Checkout thing" show names and prices instead of just IDs
+    let sql = `
+      SELECT CART.CartId, PRODUCT.ProductName, PRODUCT.Price, CART.Quantity 
+      FROM CART 
+      JOIN PRODUCT ON CART.ProductId = PRODUCT.ProductId 
+      WHERE CART.UserId = ?;
+    `;
+    const [rows] = await con.query(sql, [userId]);
+    return rows;
+}
+
+module.exports = {addToCart, getCartWithDetails,} // Add functions as needed later

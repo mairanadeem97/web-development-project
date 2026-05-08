@@ -1,4 +1,8 @@
 
+import { getCurrentUser, setCurrentUser } from "./main.js";
+
+
+
 console.log("User script loaded successfully!");// 1. grab the form and assign to a variable
 let loginForm = document.getElementById("loginForm")
 let registerForm = document.getElementById("registerForm")
@@ -21,6 +25,7 @@ console.log("Login function triggered!"); // Add this line
         fetchData('/users/login', user, 'POST')
         .then(data => {
           if(!data.message) {
+setCurrentUser(data)
             window.location = "product.html"
           }
         })
@@ -37,9 +42,7 @@ console.log("Submit clicked!")
 }
 
 
-function checkPassword(password) {
-    return true;
-}
+
 // 4. Registration function following the exact same lines of code as login
 function register(e) {
     e.preventDefault()
@@ -62,9 +65,14 @@ function register(e) {
         fetchData('/users/register', newUser, 'POST')
         .then(data => {
           if(!data.message) {
+
             alert("Registration successful!")
-            window.location = "product.html"
+            window.location = "login.html"
           }
+else {
+        const errorElement = document.getElementById("error");
+        if (errorElement) errorElement.innerHTML = data.message;
+    }
         })
         .catch(err => {
           let error = document.getElementById("error")

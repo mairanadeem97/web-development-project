@@ -20,6 +20,8 @@
 h3{
 text-align: center; 
 
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
   /*3. block quotes*/
   blockquote {
@@ -40,7 +42,7 @@ text-align: center;
   }
   /*4. anchor tags*/
   a {
-
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   text-decoration: none;
   }
     a {
@@ -101,7 +103,7 @@ text-align: center;
   flex-direction: row;
   }
 
-  .product-item {
+  .product-item img {
       text-align: center;
       width: 300px;  
     height: 300px;         /* fixed height */
@@ -194,4 +196,129 @@ input[type="email"] {
     width: 100%;        /* Takes up the whole top row */
     margin-bottom: 10px; /* Adds space between error and the title */
     display: block;     /* Ensures it doesn't sit next to other elements */
+}
+/* 1. The Container: Creates the grid columns */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 2. The Card: Style for each individual product box */
+.product-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+}
+
+/* 3. THE IMAGE FIX: This stops the image from covering the page */
+.product-card img {
+    width: 100%;        /* Scales to the width of the card */
+    height: 200px;      /* Forces all images to the same height */
+    object-fit: contain; /* Keeps the whole product bottle visible */
+    margin-bottom: 15px;
+}
+.image-slider {
+    width: 100%;
+    overflow: hidden; /* Hides the images that are "off-screen" */
+     background: rgba(255, 255, 255, 0.7);
+    padding: 20px 0;
+    border-bottom: transparent;
+}
+
+.image-track {
+    display: flex; /* Keeps images side-by-side in a single line */
+    width: calc(250px * 12); /* Image width (250) * total images (12) */
+    animation: slideLeft 25s linear infinite;
+}
+
+.image-track img {
+    width: 250px; 
+    height: 180px;
+    object-fit: cover; /* Prevents stretching */
+    margin-right: 15px; /* Space between images */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* The Animation */
+@keyframes slideLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* This moves exactly half the total width of the track */
+        transform: translateX(calc(-250px * 6 - 90px)); 
+    }
+}
+
+/* Pause when user hovers so they can look at a specific product */
+.image-track:hover {
+    animation-play-state: paused;
+}
+/* When body has the class showCart, the cartTab moves into view */
+body.showCart .cartTab {
+    right: 0;
+}
+body.showCart .container {
+    transform: translateX(-250px);
+}
+
+
+
+
+
+
+/* Position the sidebar off-screen */
+.cartTab {
+    width: 400px;
+    background-color: #353432;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px; /* Hidden by default */
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: 0.5s; /* Smooth slide */
+    z-index: 1000;
+}
+
+/* Slide the cart in when body has 'showCart' class */
+body.showCart .cartTab {
+    right: 0;
+}
+
+/* The badge on the bag icon */
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #d7ce1b;
+    color: #000;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Styling for items inside the sidebar */
+.listCart .item {
+    display: grid;
+    grid-template-columns: 70px 1fr 70px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.listCart .item img {
+    width: 100%;
 }
